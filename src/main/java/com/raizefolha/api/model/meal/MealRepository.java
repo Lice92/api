@@ -1,5 +1,7 @@
 package com.raizefolha.api.model.meal;
 
-public class MealRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface MealRepository extends JpaRepository<MealModel, Long> {
     
 }

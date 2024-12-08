@@ -30,7 +30,7 @@ public class UserModel {
 
     }    
     
-    public void updateData(UpdateUserData data){
+    public void updateUser(UpdateUserData data){
 
         if (data.email() != null){
             this.email = data.email();
