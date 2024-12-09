@@ -18,18 +18,27 @@ public class UserController {
     private UserRepository repository;
 
     @GetMapping("/listar")
-    public List <UserModel> listar () {
+    public List <UserModel> userList () {
         return repository.findAll();
     }
 
     @PostMapping("/cadastrar")
     @Transactional
-    public void cadastrar(@RequestBody @Valid RegisterUserData data) {
+    public void userRegister(@RequestBody @Valid RegisterUserData data) {
         repository.save(new UserModel(data));
     }
 
     @PutMapping
     @Transactional
-    public void 
+    public void userUpdate(@RequestBody UpdateUserData data) {
+        UserModel user = repository.getReferenceById(data.id());
+        user.updateUser(data);
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void userDelete (@PathVariable Long id) {
+        repository.deleteById(id);
+    }
 
 }

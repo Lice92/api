@@ -3,6 +3,7 @@ package com.raizefolha.api.model.meal;
 import jakarta.persistence.*;
 import lombok.*;
 
+@Embeddable
 @Table(name = "pratos")
 @Entity
 @Getter
