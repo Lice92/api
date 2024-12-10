@@ -3,7 +3,6 @@ package com.raizefolha.api.model.user;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Embeddable
 @Table(name = "usuarios")
 @Entity
 @Getter
